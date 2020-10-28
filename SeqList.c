@@ -2,7 +2,7 @@
  * @Description: 顺序表
  * @Author: 大熊人
  * @Date: 2020-09-30 11:38:10
- * @LastEditTime: 2020-10-26 20:40:09
+ * @LastEditTime: 2020-10-28 20:40:36
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +18,7 @@ void InitList(SeqList *L)
 }
 
 /**
- * @description: 在顺序表L的位置i（0 ≤ i ≤ size）前插入数据元素值X
+ * @description: 在顺序表L的第i个位置插入数据X （0 ≤ i ≤ size）
  * @param {struct *}L
  * @param {LIST_DATA_TYPE}X
  * @return {int}
@@ -47,9 +47,9 @@ int ListInsert(SeqList *L, int i, LIST_DATA_TYPE X)
 }
 
 /**
- * @description: 删除顺序表L中位置i（0 ≤ i ≤ size - 1）的数据元素值并存放到参数X中
+ * @description: 删除顺序表L中第i个位置（0 ≤ i ≤ size - 1）的数据并存储在X中
  * @param {struct *}L
- * @param {LIST_DATA_TYPE *}
+ * @param {LIST_DATA_TYPE *}X
  * @return {int}
  */
 int ListDelete(SeqList *L, int i, LIST_DATA_TYPE *X)
@@ -74,7 +74,7 @@ int ListDelete(SeqList *L, int i, LIST_DATA_TYPE *X)
 }
 
 /**
- * @description: 取顺序表L中第i个数据元素的值存于X中
+ * @description: 获取顺序表L中第i个数据的值并用X返回
  * @param {struct *}L
  * @param {LIST_DATA_TYPE *}X
  * @return {int}
@@ -85,11 +85,9 @@ int ListGet(SeqList *L, int i, LIST_DATA_TYPE *X)
     {
         return 0; //传入的参数i不合法
     }
-    else
-    {
-        *X = L->list[i];
-        return 1;
-    }
+
+    *X = L->list[i];
+    return 1;
 }
 
 /**
