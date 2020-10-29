@@ -1,5 +1,5 @@
 /*
- * @Description: 链栈
+ * @Description: 顺序栈
  * @Author: 大熊人
  * @Date: 2020-10-26 17:26:52
  * @LastEditTime: 2020-10-29 00:03:16
