@@ -1,8 +1,7 @@
 /*
  * @Description: 顺序栈
  * @Author: 大熊人
- * @Date: 2020-10-25 19:19:02
- * @LastEditTime: 2020-10-26 22:45:32
+ * @LastEditTime: 2020-11-02 23:11:32
  */
 #define SEQSTACK_MAX 100 //栈的最大值
 #define ADD_SIZE 10      //每次追加的值
@@ -10,8 +9,8 @@
 #define FALSE 0
 #define STACK_DATA_TYPE int
 
-/* 顺序栈结构类型 */
-typedef struct SeqSrack
+/* 顺序栈结构体类型 */
+typedef struct SeqStack
 {
     STACK_DATA_TYPE *base; //栈底指针
     STACK_DATA_TYPE *top;  //栈顶指针

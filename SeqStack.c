@@ -1,10 +1,8 @@
 /*
  * @Description: 顺序栈
  * @Author: 大熊人
- * @Date: 2020-10-26 17:26:52
- * @LastEditTime: 2020-10-29 00:03:16
+ * @LastEditTime: 2020-11-02 23:10:46
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "includes/SeqStack.h"
@@ -17,7 +15,7 @@
 int InitStack(SeqStack *S)
 {
     /*
-    小白笔记：
+        当时的错误，顺便记下笔记：
         S必须是一个结构体指针才能完成栈的初始化  因为如果只是结构体变量的话 那么它就是一个形参（局部变量）
         局部变量的改变是不会影响到函数间同名变量的改变的 因此我们需要传结构体变量S的地址
         简单理解就是通过S的地址  修改结构体成员变量   入栈 出栈 都一样   
@@ -96,6 +94,16 @@ int Pop(SeqStack *S, STACK_DATA_TYPE *X)
 }
 
 /**
+ * @description: 返回元素个数
+ * @param {struct}S
+ * @return {int}
+ */
+int SeqStackLength(SeqStack S)
+{
+    return S.top - S.base;
+}
+
+/**
  * @description: 测试顺序栈
  */
 void TestSeqStack()
@@ -109,12 +117,16 @@ void TestSeqStack()
         printf("初始化失败！\n");
     for (i = 1; i <= 5; i++)
     {
-        printf("Push:%d %s\n", i, Push(&S, i) ? "入栈成功" : "入栈失败");
+        printf("Push:%d %s\n", i, Push(&S, i) ? "TRUE" : "FALSE");
     }
+    printf("\nSeqStackLength=%d\n", SeqStackLength(S));
+
     GetTop(&S, &value);
     printf("Top:%d\n", value);
     while (Pop(&S, &value))
     {
         printf("Pop:%d ", value);
     }
+    printf("\nSeqStackLength=%d\n", SeqStackLength(S));
+    free(S.base);
 }
