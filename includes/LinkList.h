@@ -2,7 +2,7 @@
  * @Description: 单链表
  * @Author: 大熊人
  * @Date: 2020-10-30 20:18:09
- * @LastEditTime: 2020-11-01 22:31:14
+ * @LastEditTime: 2020-11-08 00:18:05
  */
 #define TRUE 1
 #define FALSE 0
@@ -23,3 +23,5 @@ int ListDelete(LinkList L, int i, LIST_DATA_TYPE *X);
 int GetElem(LinkList L, int i, LIST_DATA_TYPE *X);
 void PrintLinkList(LinkList L);
 int ListLength(LinkList L);
+void Destroy(LinkList *L);
+void TestLinkList();
