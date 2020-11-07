@@ -2,7 +2,7 @@
  * @Description: 单链表
  * @Author: 大熊人
  * @Date: 2020-10-30 20:17:20
- * @LastEditTime: 2020-11-01 22:33:40
+ * @LastEditTime: 2020-11-08 00:09:04
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -173,6 +173,21 @@ int ListLength(LinkList L)
 }
 
 /**
+ * @description: 销毁单链表
+ * @param {struct **}L
+ */
+void Destroy(LinkList *L)
+{
+    if (*L == NULL)
+    {
+        return;
+    }
+    Destroy(&(*L)->Next);
+    free(*L);
+    *L = NULL;
+}
+
+/**
  * @description: 测试单链表
  */
 void TestLinkList()
@@ -199,4 +214,10 @@ void TestLinkList()
 
     PrintLinkList(head);
     printf("\nListLength=%d\n", ListLength(head));
+    Destroy(&head);
+}
+
+void main()
+{
+    TestLinkList();
 }
