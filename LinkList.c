@@ -2,7 +2,7 @@
  * @Description: 单链表
  * @Author: 大熊人
  * @Date: 2020-10-30 20:17:20
- * @LastEditTime: 2020-11-08 00:09:04
+ * @LastEditTime: 2020-11-08 20:35:53
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -215,9 +215,4 @@ void TestLinkList()
     PrintLinkList(head);
     printf("\nListLength=%d\n", ListLength(head));
     Destroy(&head);
-}
-
-void main()
-{
-    TestLinkList();
 }
